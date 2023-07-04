@@ -24,7 +24,7 @@ jobs:
 
       - name: Create and activate venv
         run: |
-          python -m venv --clear venv_name
+          python -m venv --clear venv
           venv\Scripts\activate.bat
 
       - name: Install dependencies
