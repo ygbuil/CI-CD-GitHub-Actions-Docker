@@ -24,7 +24,7 @@ jobs:
 
       - name: Activate venv
         run: |
-          venv/Scripts/activate.bat
+          venv\Scripts\activate.bat
 
       - name: Install dependencies
         run: |
