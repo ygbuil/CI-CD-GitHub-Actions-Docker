@@ -1,0 +1,46 @@
+name: CI Pipeline
+
+# define that the pipeline is triggered when something is pushed to dev branch
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    # create windows VM
+    runs-on: windows-latest
+    steps:
+      - name: Clone code to VM
+        uses: actions/checkout@v3
+        with:
+          # only take last commit (to reduce time)
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - name: Activate venv
+        run: |
+          venv/Scripts/activate.bat
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pytest
+        run: |
+          pytest
+
+      - name: Authenticate with token
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.TOKEN }}
+          fetch-depth: 0
+
+      - name: Run pytest on pre_master
+        run: |
+          pytest
