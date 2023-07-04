@@ -9,29 +9,26 @@ jobs:
     # run on production server
     runs-on: self-hosted
     steps:
+      # - name: Authenticate with token
+      #   uses: actions/checkout@v3
+      #   with:
+      #     token: ${{ secrets.TOKEN }}
+      #     fetch-depth: 0
 
-      - name: Authenticate with token
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.TOKEN }}
-          fetch-depth: 0
-
-      - name: Merge pre_master into master
+      - name: Stop API
         run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "Github Actions"
-          git checkout master
-          git merge pre_master
-          git push -u origin master
+          pkill uvicorn
 
       - name: Pull code
         run: |
-          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions
-          git checkout master
-          git clean -fd -x
+          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           git pull
 
       - name: Run pytest on server
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions
           python -m pytest
+
+      - name: Start API
+        run: |
+          uvicorn src.main:app --port 8000
