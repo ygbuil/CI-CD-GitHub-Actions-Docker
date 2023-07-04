@@ -22,8 +22,9 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: Activate venv
+      - name: Create and activate venv
         run: |
+          python -m venv --clear venv_name
           venv\Scripts\activate.bat
 
       - name: Install dependencies
@@ -34,13 +35,3 @@ jobs:
       - name: Run pytest
         run: |
           pytest
-
-      # - name: Authenticate with token
-      #   uses: actions/checkout@v3
-      #   with:
-      #     token: ${{ secrets.TOKEN }}
-      #     fetch-depth: 0
-
-      # - name: Run pytest on pre_master
-      #   run: |
-      #     pytest
