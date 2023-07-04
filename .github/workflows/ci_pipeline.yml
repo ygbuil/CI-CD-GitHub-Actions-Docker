@@ -35,12 +35,12 @@ jobs:
         run: |
           pytest
 
-      - name: Authenticate with token
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.TOKEN }}
-          fetch-depth: 0
+      # - name: Authenticate with token
+      #   uses: actions/checkout@v3
+      #   with:
+      #     token: ${{ secrets.TOKEN }}
+      #     fetch-depth: 0
 
-      - name: Run pytest on pre_master
-        run: |
-          pytest
+      # - name: Run pytest on pre_master
+      #   run: |
+      #     pytest

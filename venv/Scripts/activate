@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\llorenc.buil\github\FastAPI-Docker\venv"
+VIRTUAL_ENV="C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
