@@ -15,20 +15,25 @@ jobs:
       #     token: ${{ secrets.TOKEN }}
       #     fetch-depth: 0
 
-      - name: Stop API
+      - name: Stop Docker container
         run: |
-          pkill uvicorn
+          docker stop $(docker ps -q)
 
       - name: Pull code
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           git pull
 
+      - name: Install possible new libraries
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
       - name: Run pytest on server
         run: |
-          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions
+          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           pytest
 
-      - name: Start API
+      - name: Start Docker container
         run: |
-          uvicorn src.main:app --port 8000
+          docker compose -f docker-compose-prod.yaml up
