@@ -27,7 +27,7 @@ jobs:
       - name: Run pytest on server
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions
-          python -m pytest
+          pytest
 
       - name: Start API
         run: |
