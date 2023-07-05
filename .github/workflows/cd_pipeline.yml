@@ -39,5 +39,5 @@ jobs:
       - name: Start Docker container
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
-          docker compose -f docker-compose-prod.yaml up --build
+          docker compose -f docker-compose-prod.yaml up -d --build
         shell: cmd
