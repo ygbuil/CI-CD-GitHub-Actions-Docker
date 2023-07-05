@@ -1,6 +1,6 @@
 # CI-CD-Github-Actions-Docker
 
-# Description
+## Description
 
 This project is an implementation of a CI-CD pipeline to deploy a FastAPI backend a production system using Docker. The project consists of a dummy FastAPI backend and a dummy test (those are irrelevant for the purpose of the project), and the CI-CD Pipelines found in `.github/workflows` as well as the docker files.
 
@@ -16,14 +16,14 @@ This project is an implementation of a CI-CD pipeline to deploy a FastAPI backen
 * Pull code, install requirements and run tests.
 * Start Docker container.
 
-# How to use it
+## How to use it
 
 * Clone the repository.
 * Go to `Settings` -> `Actions` -> `Runners` and create a runner. Activate the runner on your production server.
 
 On the actions tab of the repository you can see status of the pipelines. To trigger the CI Pipeline, just push some code. To trigger the CD Pipeline go to `Actions` -> `CD Pipeline` -> `Run workflow` -> `Run workflow`.
 
-# Pipelines status
+## Pipelines status
 
 [![CI Pipeline](https://github.com/ygbuil/CI-CD-GitHub-Actions-Docker/actions/workflows/ci_pipeline.yml/badge.svg?branch=master)](https://github.com/ygbuil/CI-CD-GitHub-Actions-Docker/actions/workflows/ci_pipeline.yml)
 
