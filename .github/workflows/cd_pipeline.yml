@@ -25,7 +25,7 @@ jobs:
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           git pull
-        shell: pwsh
+        shell: cmd
 
       # - name: Install possible new libraries
       #   run: |
