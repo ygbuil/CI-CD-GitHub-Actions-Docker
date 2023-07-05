@@ -20,6 +20,7 @@ This project is an implementation of a CI-CD pipeline to deploy a FastAPI backen
 
 * Clone the repository.
 * Go to `Settings` -> `Actions` -> `Runners` and create a runner. Activate the runner on your production server.
+* Docker Desktop has to be opened in production.
 
 On the actions tab of the repository you can see status of the pipelines. To trigger the CI Pipeline, just push some code. To trigger the CD Pipeline go to `Actions` -> `CD Pipeline` -> `Run workflow` -> `Run workflow`.
 
