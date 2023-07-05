@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is an implementation of a CI-CD pipeline to deploy a FastAPI backend a production system using Docker. The project consists of a dummy FastAPI backend and a dummy test (those are irrelevant for the purpose of the project), and the CI-CD Pipelines found in `.github/workflows` as well as the docker files.
+This project is an implementation of a CI-CD pipeline to deploy a FastAPI backend on a production system using Docker. The project consists of a dummy FastAPI backend and a dummy test (those are irrelevant for the purpose of the project), a CI-CD Pipelines found in `.github/workflows` and some docker files.
 
 **CI Pipeline:** Whenever a push is made to the repo, the CI Pipeline is automatically triggered, following these steps:
 
