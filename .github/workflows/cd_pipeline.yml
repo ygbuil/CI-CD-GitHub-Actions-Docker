@@ -18,12 +18,12 @@ jobs:
 
       - name: Stop Docker container
         run: |
-          docker stop $CONTAINER_NAME
+          docker stop ${{env.CONTAINER_NAME}}
         shell: cmd
 
       - name: Pull code
         run: |
-          cd $PROJECT_PATH
+          cd ${{env.PROJECT_PATH}}
           git pull
         shell: cmd
 
