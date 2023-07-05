@@ -15,11 +15,11 @@ jobs:
       #     token: ${{ secrets.TOKEN }}
       #     fetch-depth: 0
 
-      # - name: Stop Docker container
-      #   run: |
-      #     cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
-      #     docker stop $(docker ps -q)
-      #   shell: pwsh
+      - name: Stop Docker container
+        run: |
+          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
+          docker stop $(docker ps -q)
+        shell: pwsh
 
       - name: Pull code
         run: |
