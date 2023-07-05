@@ -9,12 +9,11 @@ jobs:
     # run on production server
     runs-on: self-hosted
     steps:
-      - name: Authenticate with token
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Stop Docker container
         run: |
-          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           docker stop ci-cd-github-actions-fastapi-web-1
         shell: cmd
 
@@ -32,12 +31,10 @@ jobs:
 
       - name: Run pytest on server
         run: |
-          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           pytest
         shell: cmd
 
       - name: Start Docker container
         run: |
-          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           docker compose -f docker-compose-prod.yaml up -d --build
         shell: cmd

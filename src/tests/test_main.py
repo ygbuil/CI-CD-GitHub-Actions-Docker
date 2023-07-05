@@ -12,4 +12,4 @@ def test_get_hello_world(client):
     response = client.get('/')
     
     assert response.status_code == 200
-    assert response.json() == {'return': 'hello world :D'}
+    assert response.json() == {'return': 'hello world!'}

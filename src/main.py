@@ -4,7 +4,7 @@ app = FastAPI()
 
 @app.get('/')
 def get_hello_world():
-    return {'return': 'hello world :D'}
+    return {'return': 'hello world!'}
 
 # run normally:
 #   - uvicorn src.main:app --port 8000 --reload
