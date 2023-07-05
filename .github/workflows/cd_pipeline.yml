@@ -11,9 +11,6 @@ jobs:
     steps:
       - name: Authenticate with token
         uses: actions/checkout@v3
-      #   with:
-      #     token: ${{ secrets.TOKEN }}
-      #     fetch-depth: 0
 
       - name: Stop Docker container
         run: |
@@ -41,5 +38,6 @@ jobs:
 
       - name: Start Docker container
         run: |
+          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           docker compose -f docker-compose-prod.yaml up --build
         shell: cmd
