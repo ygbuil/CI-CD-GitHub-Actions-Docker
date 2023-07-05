@@ -9,8 +9,8 @@ jobs:
     # run on production server
     runs-on: self-hosted
     steps:
-      # - name: Authenticate with token
-      #   uses: actions/checkout@v3
+      - name: Authenticate with token
+        uses: actions/checkout@v3
       #   with:
       #     token: ${{ secrets.TOKEN }}
       #     fetch-depth: 0
