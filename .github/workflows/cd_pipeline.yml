@@ -17,6 +17,7 @@ jobs:
 
       - name: Stop Docker container
         run: |
+          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           docker stop $(docker ps -q)
         shell: bash
 
