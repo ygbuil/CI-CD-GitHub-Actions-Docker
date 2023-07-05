@@ -4,6 +4,10 @@ name: CD Pipeline
 on:
   workflow_dispatch:
 
+env:
+  CONTAINER_NAME: ci-cd-github-actions-fastapi-web-1
+  PROJECT_PATH: C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
+
 jobs:
   deploy:
     # run on production server
@@ -14,12 +18,12 @@ jobs:
 
       - name: Stop Docker container
         run: |
-          docker stop ci-cd-github-actions-fastapi-web-1
+          docker stop $CONTAINER_NAME
         shell: cmd
 
       - name: Pull code
         run: |
-          cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
+          cd $PROJECT_PATH
           git pull
         shell: cmd
 
