@@ -19,27 +19,27 @@ jobs:
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           docker stop $(docker ps -q)
-        shell: bash
+        shell: cmd
 
       - name: Pull code
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           git pull
-        shell: bash
+        shell: cmd
 
       - name: Install possible new libraries
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-        shell: bash
+        shell: cmd
 
       - name: Run pytest on server
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           pytest
-        shell: bash
+        shell: cmd
 
       - name: Start Docker container
         run: |
           docker compose -f docker-compose-prod.yaml up --build
-        shell: bash
+        shell: cmd
