@@ -16,29 +16,29 @@ jobs:
       #     fetch-depth: 0
 
       - name: Stop Docker container
-      - shell: cmd
+        shell: cmd
         run: |
           docker stop $(docker ps -q)
 
       - name: Pull code
-      - shell: cmd
+        shell: cmd
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           git pull
 
       - name: Install possible new libraries
-      - shell: cmd
+        shell: cmd
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run pytest on server
-      - shell: cmd
+        shell: cmd
         run: |
           cd C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
           pytest
 
       - name: Start Docker container
-      - shell: cmd
+        shell: cmd
         run: |
           docker compose -f docker-compose-prod.yaml up --build
