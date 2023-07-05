@@ -6,7 +6,7 @@ on:
 
 env:
   CONTAINER_NAME: ci-cd-github-actions-fastapi-web-1
-  PROJECT_PATH: C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-FastAPI
+  PROJECT_PATH: C:\Users\llorenc.buil\github\CI-CD-GitHub-Actions-Docker
 
 jobs:
   deploy:
