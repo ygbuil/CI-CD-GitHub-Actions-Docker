@@ -9,5 +9,4 @@ def get_hello_world():
 # run normally:
 #   - uvicorn src.main:app --port 8000 --reload
 # run with docker:
-#   - docker compose up --build
 #   - docker compose -f docker-compose-prod.yaml up --build

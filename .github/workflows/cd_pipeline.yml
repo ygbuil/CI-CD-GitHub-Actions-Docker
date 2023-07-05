@@ -18,7 +18,7 @@ jobs:
       - name: Stop Docker container
         shell: cmd
         run: |
-          FOR /f "tokens=*" %i IN ('docker ps -q') DO docker stop %i
+          FOR /F "tokens=*" %i IN ('docker ps -q') DO (docker stop %i)
 
       - name: Pull code
         shell: cmd
